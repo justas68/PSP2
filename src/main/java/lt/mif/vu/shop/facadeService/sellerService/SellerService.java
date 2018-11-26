@@ -1,4 +1,4 @@
-package lt.mif.vu.shop.facadeService;
+package lt.mif.vu.shop.facadeService.sellerService;
 
 import lt.mif.vu.shop.domain.seller.Seller;
 

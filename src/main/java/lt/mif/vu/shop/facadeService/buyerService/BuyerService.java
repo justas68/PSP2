@@ -1,4 +1,4 @@
-package lt.mif.vu.shop.facadeService;
+package lt.mif.vu.shop.facadeService.buyerService;
 
 import lt.mif.vu.shop.domain.buyer.Buyer;
 
@@ -13,7 +13,7 @@ public interface BuyerService {
 
     Buyer updateBuyer(UUID id, String name, double wallet);
 
-    Buyer addBuyer (String name);
+    Buyer registerBuyer(String name);
 
     Buyer deleteBuyer(UUID id);
 }

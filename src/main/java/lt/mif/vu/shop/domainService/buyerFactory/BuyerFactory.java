@@ -1,5 +1,7 @@
-package lt.mif.vu.shop.domain.buyer;
+package lt.mif.vu.shop.domainService.buyerFactory;
+
+import lt.mif.vu.shop.domain.buyer.Buyer;
 
 public interface BuyerFactory {
-    Buyer getBuyer(String fullName);
+    Buyer createBuyer(String fullName);
 }

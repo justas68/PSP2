@@ -1,11 +1,10 @@
-package lt.mif.vu.shop.model.item;
+package lt.mif.vu.shop.domain.item;
 
 import java.util.UUID;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lt.mif.vu.shop.model.AuditModel;
-import lt.mif.vu.shop.model.seller.Seller;
+import lt.mif.vu.shop.domain.seller.Seller;
 import org.hibernate.annotations.*;
 
 import javax.persistence.Entity;
@@ -13,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "items")
-public abstract class Item extends AuditModel {
+public abstract class Item{
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(

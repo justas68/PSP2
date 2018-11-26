@@ -1,4 +1,6 @@
-package lt.mif.vu.shop.domain.seller;
+package lt.mif.vu.shop.domainService.sellerFactory;
+
+import lt.mif.vu.shop.domain.seller.Seller;
 
 public interface SellerFactory {
 

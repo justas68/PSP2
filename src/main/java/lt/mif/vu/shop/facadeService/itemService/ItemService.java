@@ -1,4 +1,4 @@
-package lt.mif.vu.shop.facadeService;
+package lt.mif.vu.shop.facadeService.itemService;
 
 import lt.mif.vu.shop.domain.item.Item;
 import java.util.List;

@@ -1,6 +1,5 @@
-package lt.mif.vu.shop.model.buyer;
+package lt.mif.vu.shop.domain.buyer;
 
-import lt.mif.vu.shop.model.AuditModel;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
@@ -8,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.UUID;
 
-public abstract class Buyer extends AuditModel {
+public abstract class Buyer {
 
     @Id
     @GeneratedValue(generator = "UUID")

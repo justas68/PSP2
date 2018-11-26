@@ -1,4 +1,4 @@
-package lt.mif.vu.shop.facadeService.ItemServiceImp;
+package lt.mif.vu.shop.facadeService.itemService;
 
 import lt.mif.vu.shop.Integrational.mailListener.MailListener;
 import lt.mif.vu.shop.facadeService.itemService.ItemService;
@@ -35,7 +35,7 @@ public abstract class AbstractItemService implements ItemService{
     private ItemFactory itemFactory;
 
     @Autowired
-    private ShopService shopService;
+    private ShopService shopService1;
 
     @Autowired
     private MessageSender messageSender;
@@ -47,10 +47,11 @@ public abstract class AbstractItemService implements ItemService{
     }
 
     public Item addNewItem(double price, String name, String description, int deliveryTime, UUID sellerId) {
+        shopService1.test();
         Item item = itemFactory.getItem(price, name, description);
         item.setDeliveryTime(deliveryTime);
         Seller seller = sellerRepository.findById(sellerId).orElse(null);
-        if (!shopService.checkPrice(item)){
+        if (!shopService1.checkPrice(item)){
             return null;
         }
         if (seller != null){
@@ -75,7 +76,7 @@ public abstract class AbstractItemService implements ItemService{
         if (buyer == null){
             return null;
         }
-        buyer = shopService.serveBuyer(item, buyer);
+        buyer = shopService1.serveBuyer(item, buyer);
         if (buyer == null){
             return null;
         }

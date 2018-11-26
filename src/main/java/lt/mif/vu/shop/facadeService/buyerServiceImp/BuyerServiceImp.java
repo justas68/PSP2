@@ -1,5 +1,6 @@
-package lt.mif.vu.shop.facadeService;
+package lt.mif.vu.shop.facadeService.buyerServiceImp;
 
+import lt.mif.vu.shop.facadeService.buyerService.BuyerService;
 import lt.mif.vu.shop.repository.BuyerRepository;
 import lt.mif.vu.shop.domain.buyer.Buyer;
 import lt.mif.vu.shop.domainService.buyerFactory.BuyerFactory;
@@ -38,8 +39,8 @@ public class BuyerServiceImp implements BuyerService {
         return buyer;
     }
 
-    public Buyer addBuyer(String name) {
-        Buyer buyer = buyerFactory.getBuyer(name);
+    public Buyer registerBuyer(String name) {
+        Buyer buyer = buyerFactory.createBuyer(name);
         buyerRepository.save(buyer);
         //
         return buyer;

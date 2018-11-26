@@ -1,5 +1,7 @@
-package lt.mif.vu.shop.facadeService;
+package lt.mif.vu.shop.facadeService.sellerServiceImp;
 
+import lt.mif.vu.shop.domainService.shopService.ShopService;
+import lt.mif.vu.shop.facadeService.sellerService.SellerService;
 import lt.mif.vu.shop.repository.SellerRepository;
 import lt.mif.vu.shop.domain.seller.Seller;
 import lt.mif.vu.shop.domainService.sellerFactory.SellerFactory;
@@ -16,7 +18,11 @@ public class SellerServiceImp implements SellerService {
     @Autowired
     private SellerFactory sellerFactory;
 
+    @Autowired
+    private ShopService shopService2;
+
     public Seller registerSeller(String name, String country) {
+        shopService2.test();
         Seller seller = sellerFactory.getSeller(name, country);
         sellerRepository.save(seller);
         return seller;

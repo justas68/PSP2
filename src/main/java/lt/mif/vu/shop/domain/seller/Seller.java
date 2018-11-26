@@ -1,8 +1,7 @@
-package lt.mif.vu.shop.model.seller;
+package lt.mif.vu.shop.domain.seller;
 
 
-import lt.mif.vu.shop.model.AuditModel;
-import lt.mif.vu.shop.model.item.Item;
+import lt.mif.vu.shop.domain.item.Item;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "sellers")
-public abstract class Seller extends AuditModel {
+public abstract class Seller {
 
     @Id
     @GeneratedValue(generator = "UUID")
