@@ -1,11 +1,27 @@
 package lt.mif.vu.shop.repository;
 
-import lt.mif.vu.shop.model.Item;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import lt.mif.vu.shop.domain.item.Item;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
-@Repository
-public interface ItemRepository extends CrudRepository<Item, UUID> {
+public interface ItemRepository {
+
+    List<Item> findBySellerId(UUID sellerId);
+
+    List<Item> findAll();
+
+    Optional<Item> findById (UUID id);
+
+    Item save (Item seller);
+
+    Optional<Item> delete (Item item);
+
+    Optional<Item> update (Item item);
+
+
+
+
+
 }
