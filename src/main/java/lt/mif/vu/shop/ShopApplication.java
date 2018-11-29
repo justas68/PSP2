@@ -10,8 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 public class ShopApplication {
 
 	public static void main(String[] args) {
-		//ConfigurableApplicationContext cx =	SpringApplication.run(ShopApplication.class, args);
-        SpringApplication.run(ShopApplication.class, args);
+		ConfigurableApplicationContext cx =	SpringApplication.run(ShopApplication.class, args);
+        //SpringApplication.run(ShopApplication.class, args);
 
     }
 }

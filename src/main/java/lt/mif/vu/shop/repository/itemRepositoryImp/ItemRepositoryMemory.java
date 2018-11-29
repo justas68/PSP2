@@ -1,7 +1,8 @@
-package lt.mif.vu.shop.repository;
+package lt.mif.vu.shop.repository.itemRepositoryImp;
 
 import lt.mif.vu.shop.Integrational.mailListener.MailListener;
 import lt.mif.vu.shop.domain.item.Item;
+import lt.mif.vu.shop.repository.itemRepository.ItemRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class ItemRepositoryMemory implements ItemRepository, MailListener {
+public class ItemRepositoryMemory implements ItemRepository {
 
     List<Item> items = new ArrayList<>();
 
@@ -48,8 +49,7 @@ public class ItemRepositoryMemory implements ItemRepository, MailListener {
         items.add(item);
         return Optional.of(item);
     }
-
-    public void emailWasSent(String message, String receiver){
+    public void  emailWasSent(String message, String receiver){
         System.out.println("registering that email to " + receiver +  " was sent");
     }
 }

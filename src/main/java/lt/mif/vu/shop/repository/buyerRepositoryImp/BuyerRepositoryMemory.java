@@ -1,6 +1,7 @@
-package lt.mif.vu.shop.repository;
+package lt.mif.vu.shop.repository.buyerRepositoryImp;
 
 import lt.mif.vu.shop.domain.buyer.Buyer;
+import lt.mif.vu.shop.repository.buyerRepository.BuyerRepository;
 
 import java.util.ArrayList;
 import java.util.List;

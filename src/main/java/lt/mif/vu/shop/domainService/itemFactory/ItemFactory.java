@@ -4,6 +4,6 @@ import lt.mif.vu.shop.domain.item.Item;
 
 public interface ItemFactory {
 
-    Item getItem(double price, String name, String description);
+    Item createItem(double price, String name, String description);
 
 }

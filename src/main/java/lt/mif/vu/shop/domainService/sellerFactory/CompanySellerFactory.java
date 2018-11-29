@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CompanySellerFactory implements  SellerFactory {
 
-    public Seller getSeller(String companyName, String country){
+    public Seller createSeller(String companyName, String country){
         return new CompanySeller(companyName, country);
     }
 }

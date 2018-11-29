@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SingleItemFactory implements ItemFactory {
 
-    public Item getItem(double price, String name, String description) {
+    public Item createItem(double price, String name, String description) {
         return new SingleItem(price, name, description);
     }
 }

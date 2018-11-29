@@ -4,5 +4,5 @@ import lt.mif.vu.shop.domain.seller.Seller;
 
 public interface SellerFactory {
 
-    Seller getSeller (String name, String country);
+    Seller createSeller(String name, String country);
 }

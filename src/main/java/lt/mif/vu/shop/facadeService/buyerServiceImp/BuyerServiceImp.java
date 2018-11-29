@@ -1,7 +1,7 @@
 package lt.mif.vu.shop.facadeService.buyerServiceImp;
 
 import lt.mif.vu.shop.facadeService.buyerService.BuyerService;
-import lt.mif.vu.shop.repository.BuyerRepository;
+import lt.mif.vu.shop.repository.buyerRepository.BuyerRepository;
 import lt.mif.vu.shop.domain.buyer.Buyer;
 import lt.mif.vu.shop.domainService.buyerFactory.BuyerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

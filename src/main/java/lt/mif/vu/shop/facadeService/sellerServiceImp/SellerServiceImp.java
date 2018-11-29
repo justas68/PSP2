@@ -2,7 +2,7 @@ package lt.mif.vu.shop.facadeService.sellerServiceImp;
 
 import lt.mif.vu.shop.domainService.shopService.ShopService;
 import lt.mif.vu.shop.facadeService.sellerService.SellerService;
-import lt.mif.vu.shop.repository.SellerRepository;
+import lt.mif.vu.shop.repository.sellerRepository.SellerRepository;
 import lt.mif.vu.shop.domain.seller.Seller;
 import lt.mif.vu.shop.domainService.sellerFactory.SellerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,10 @@ public class SellerServiceImp implements SellerService {
     private ShopService shopService2;
 
     public Seller registerSeller(String name, String country) {
-        shopService2.test();
-        Seller seller = sellerFactory.getSeller(name, country);
+        Seller seller = sellerFactory.createSeller(name, country);
+        if (!shopService2.checkSellerCountry(seller)){
+            return null;
+        }
         sellerRepository.save(seller);
         return seller;
     }

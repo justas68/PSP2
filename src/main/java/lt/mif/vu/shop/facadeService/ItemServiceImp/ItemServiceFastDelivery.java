@@ -1,7 +1,6 @@
 package lt.mif.vu.shop.facadeService.ItemServiceImp;
 
 import lt.mif.vu.shop.domain.item.Item;
-import lt.mif.vu.shop.facadeService.itemService.AbstractItemService;
 
 import java.util.UUID;
 

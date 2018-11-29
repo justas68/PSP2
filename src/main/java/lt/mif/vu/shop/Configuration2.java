@@ -16,16 +16,21 @@ import lt.mif.vu.shop.domainService.itemFactory.SingleItemFactory;
 import lt.mif.vu.shop.domainService.sellerFactory.PrivateSellerFactory;
 import lt.mif.vu.shop.domainService.sellerFactory.SellerFactory;
 import lt.mif.vu.shop.facadeService.sellerServiceImp.SellerServiceImp;
-import lt.mif.vu.shop.repository.*;
+import lt.mif.vu.shop.repository.buyerRepository.BuyerRepository;
+import lt.mif.vu.shop.repository.buyerRepositoryImp.BuyerRepositoryMemory;
+import lt.mif.vu.shop.repository.itemRepository.ItemRepository;
+import lt.mif.vu.shop.repository.itemRepositoryImp.ItemRepositoryMemory;
+import lt.mif.vu.shop.repository.sellerRepository.SellerRepository;
+import lt.mif.vu.shop.repository.sellerRepositoryImp.SellerRepositoryMemory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Configuration
+//@Configuration
 
-public class ConfigurationSlowDelivery {
+public class Configuration2 {
 
     @Bean
     public ItemService itemService() {

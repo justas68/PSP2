@@ -1,4 +1,4 @@
-package lt.mif.vu.shop.repository;
+package lt.mif.vu.shop.repository.buyerRepository;
 
 import lt.mif.vu.shop.domain.buyer.Buyer;
 

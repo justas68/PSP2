@@ -1,11 +1,11 @@
 package lt.mif.vu.shop;
 
 import lt.mif.vu.shop.Integrational.mailListener.MailListener;
+import lt.mif.vu.shop.Integrational.mailSenderImp.MessageSenderEmail;
 import lt.mif.vu.shop.domainService.buyerFactory.BuyerFactory;
 import lt.mif.vu.shop.domainService.buyerFactory.VipBuyerFactory;
 import lt.mif.vu.shop.facadeService.ItemServiceImp.ItemServiceSlowDelivery;
 import lt.mif.vu.shop.facadeService.sellerServiceImp.SellerServiceImp;
-import lt.mif.vu.shop.repository.*;
 import lt.mif.vu.shop.Integrational.mailSencer.MessageSender;
 import lt.mif.vu.shop.Integrational.mailSenderImp.MessageSenderConsole;
 import lt.mif.vu.shop.facadeService.itemService.ItemService;
@@ -16,14 +16,21 @@ import lt.mif.vu.shop.domainService.itemFactory.ItemFactory;
 import lt.mif.vu.shop.domainService.itemFactory.SingleItemFactory;
 import lt.mif.vu.shop.domainService.sellerFactory.PrivateSellerFactory;
 import lt.mif.vu.shop.domainService.sellerFactory.SellerFactory;
+import lt.mif.vu.shop.repository.buyerRepository.BuyerRepository;
+import lt.mif.vu.shop.repository.buyerRepositoryImp.BuyerRepositoryMemory;
+import lt.mif.vu.shop.repository.itemRepository.ItemRepository;
+import lt.mif.vu.shop.repository.itemRepositoryImp.ItemRepositoryMemory;
+import lt.mif.vu.shop.repository.sellerRepository.SellerRepository;
+import lt.mif.vu.shop.repository.sellerRepositoryImp.SellerRepositoryMemory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-//@Configuration
-public class ConfigurationFastDelivery {
+@Configuration
+public class Configuration1 {
 
     @Bean
     public ItemService itemService() {
@@ -64,18 +71,19 @@ public class ConfigurationFastDelivery {
     BuyerRepository buyerRepository() {
         return new BuyerRepositoryMemory();
     }
-    @Bean
-    MessageSender messageSender(){
-        return new MessageSenderConsole();
-    }
 
     @Bean
-    ShopService shopService1(){
-        return new ShopServiceNormal();
+    MessageSender messageSender(){
+        return new MessageSenderEmail();
     }
 
     @Bean
     ShopService shopService2(){
+        return new ShopServiceNormal();
+    }
+
+    @Bean
+    ShopService shopService1(){
         return new ShopServiceLimited();
     }
 

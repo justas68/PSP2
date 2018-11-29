@@ -1,11 +1,10 @@
-package lt.mif.vu.shop.facadeService.itemService;
+package lt.mif.vu.shop.facadeService.ItemServiceImp;
 
-import lt.mif.vu.shop.Integrational.mailListener.MailListener;
 import lt.mif.vu.shop.facadeService.itemService.ItemService;
-import lt.mif.vu.shop.repository.BuyerRepository;
-import lt.mif.vu.shop.repository.ItemRepository;
+import lt.mif.vu.shop.repository.buyerRepository.BuyerRepository;
+import lt.mif.vu.shop.repository.itemRepository.ItemRepository;
 import lt.mif.vu.shop.Integrational.mailSencer.MessageSender;
-import lt.mif.vu.shop.repository.SellerRepository;
+import lt.mif.vu.shop.repository.sellerRepository.SellerRepository;
 import lt.mif.vu.shop.domainService.shopService.ShopService;
 import lt.mif.vu.shop.domain.buyer.Buyer;
 import lt.mif.vu.shop.domain.item.Item;
@@ -20,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public abstract class AbstractItemService implements ItemService{
+public abstract class AbstractItemService implements ItemService {
 
     @Autowired
     private SellerRepository sellerRepository;
@@ -47,8 +46,7 @@ public abstract class AbstractItemService implements ItemService{
     }
 
     public Item addNewItem(double price, String name, String description, int deliveryTime, UUID sellerId) {
-        shopService1.test();
-        Item item = itemFactory.getItem(price, name, description);
+        Item item = itemFactory.createItem(price, name, description);
         item.setDeliveryTime(deliveryTime);
         Seller seller = sellerRepository.findById(sellerId).orElse(null);
         if (!shopService1.checkPrice(item)){
@@ -64,7 +62,7 @@ public abstract class AbstractItemService implements ItemService{
 
     public List<Item> findAllItems() {
 
-        return (List<Item>) itemRepository.findAll();
+        return itemRepository.findAll();
     }
 
     public Item sellItem(UUID id, UUID buyerId) {
