@@ -1,4 +1,4 @@
-package lt.mif.vu.shop.controller;
+package lt.mif.vu.shop.controller.buyerController;
 
 import lt.mif.vu.shop.domain.buyer.Buyer;
 import lt.mif.vu.shop.facadeService.buyerService.BuyerService;

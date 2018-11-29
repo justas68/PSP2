@@ -1,4 +1,4 @@
-package lt.mif.vu.shop.controller;
+package lt.mif.vu.shop.controller.itemController;
 
 import lt.mif.vu.shop.domain.item.Item;
 import lt.mif.vu.shop.facadeService.itemService.ItemService;
